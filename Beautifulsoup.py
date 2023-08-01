@@ -1,6 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+class Beautifuloupclasse:
+
+    def _init_(self,link):
+        self.link= link
+
+    
 
 
 html_page = requests.get('https://www.infraxcode.com/')
@@ -15,12 +21,8 @@ for item in infraXcode_services:
     print(item.text)
     print('***')
 
-df=pd.DataFrame(item)
-file_name = "BS.xlsx"
+
    
 
-   # Write the DataFrame to the Excel file
-df.to_excel(file_name, sheet_name='BS',index=False)
 
-b=BeautifulSoupclasse('https://www.infraxcode.com/fournisseur-de-solutions-dautomatisation/')
-b.createExcelSheet()
+
