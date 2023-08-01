@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 class Beautifuloupclasse:
 #a constructor method of the class
-    def _init_(self,link):
+    def __init__(self,link):
         self.link= link
 #adding a new method to extract data from the website
     def extractData(self):
@@ -23,16 +23,14 @@ class Beautifuloupclasse:
         file_name = "BS.xlsx"
    # Write the DataFrame to the Excel file
         df.to_excel(file_name, sheet_name='BS.xlsx',index=False)
-
+  # Create an instance of the class and pass the link parameter       
+b=Beautifuloupclasse('https://www.infraxcode.com/fournisseur-de-solutions-dautomatisation/')
+b.createExcelSheet()
    
 
 
 
 
-infraXcode_services=html.select(".elementor-widget-wrap.elementor-element-populated h2 a")
-for item in infraXcode_services:
-    print(item.text)
-    print('***')
 
 
    
