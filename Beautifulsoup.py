@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 class Beautifuloupclasse:
-#a constructor method of the class
+#a constructor  of the class
     def __init__(self,link):
         self.link= link
 #adding a new method to extract data from the website
