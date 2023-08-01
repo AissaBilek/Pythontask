@@ -12,7 +12,7 @@ class Beautifuloupclasse:
         html = BeautifulSoup(services_providing.content, 'html.parser')
         infraXcode_services=html.select(".elementor-widget-wrap.elementor-element-populated h2 a")
         return infraXcode_services
-    
+#second method to store data on excel file
     def createExcelSheet(self):
         services=[]
         data=self.extractData()
@@ -24,7 +24,6 @@ class Beautifuloupclasse:
    # Write the DataFrame to the Excel file
         df.to_excel(file_name, sheet_name='BS.xlsx',index=False)
 
-   # Close the Excel writer to save the data
    
 
 
