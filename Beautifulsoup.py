@@ -13,6 +13,19 @@ class Beautifuloupclasse:
         infraXcode_services=html.select(".elementor-widget-wrap.elementor-element-populated h2 a")
         return infraXcode_services
     
+    def createExcelSheet(self):
+        services=[]
+        data=self.extractData()
+        for item in data:
+         services.append({'titre':item.text})
+        print(services)   
+        df=pd.DataFrame(services)
+        file_name = "BS.xlsx"
+   # Write the DataFrame to the Excel file
+        df.to_excel(file_name, sheet_name='BS.xlsx',index=False)
+
+   # Close the Excel writer to save the data
+   
 
 
 
