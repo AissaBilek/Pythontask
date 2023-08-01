@@ -1,2 +1,2 @@
 # Pythontask
-scraping data from a website
+scraping data from a website using 2 python libraries
