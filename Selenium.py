@@ -4,7 +4,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 
-# Create a Chrome WebDriver instance
+class Selenuimclass:
+    def __init__(self,link):
+        self.link= link
+        
 options = Options()
 options.add_argument("--headless")
 
