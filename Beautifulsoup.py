@@ -23,9 +23,8 @@ class Beautifuloupclasse:
         file_name = "BS.xlsx"
    # Write the DataFrame to the Excel file
         df.to_excel(file_name, sheet_name='BS.xlsx',index=False)
-  # Create an instance of the class and the excel file    
-b=Beautifuloupclasse('https://www.infraxcode.com/fournisseur-de-solutions-dautomatisation/')
-b.createExcelSheet()
+   
+
    
 
 
