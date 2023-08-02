@@ -7,26 +7,19 @@ import pandas as pd
 class Selenuimclass:
     def __init__(self,link):
         self.link= link
-        
-options = Options()
-options.add_argument("--headless")
+    def extractElements(self):
+        options = Options()
+        options.add_argument("--headless")
+        #options instance
+        driver = webdriver.Chrome(options=options)
+        driver.get(self.link)
+        # this is the css classes for the services container
+        service_class_name = ".elementor-widget-wrap.elementor-element-populated" 
+       # css selector
+        css_selector = f"{service_class_name} h2 a"
+        # Find an element by its css selector and extract its text content
+        elements = driver.find_elements(By.CSS_SELECTOR, css_selector)
+        return elements
+   
 
-#options instance
-driver = webdriver.Chrome(options=options)
 
-
-# Navigate to the webpage
-URL = "https://www.infraxcode.com/fournisseur-de-solutions-dautomatisation/"
-driver.get(URL)
-# this is the css classes for the services container
-service_class_name = ".elementor-widget-wrap.elementor-element-populated"
-
-# css selector
-css_selector = f"{service_class_name} h2 a"
-
-# Find an element by its css selector and extract its text content
-elements = driver.find_elements(By.CSS_SELECTOR, css_selector)
-for element in elements:
-    print(element.text)
-# Close the WebDriver
-driver.quit()
