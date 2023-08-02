@@ -1,9 +1,8 @@
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 #webdriver configuration
 from selenium.webdriver.chrome.options import Options
-
+import pandas as pd
 
 # Create a Chrome WebDriver instance
 options = Options()
