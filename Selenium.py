@@ -20,6 +20,15 @@ class Selenuimclass:
         # Find an element by its css selector and extract its text content
         elements = driver.find_elements(By.CSS_SELECTOR, css_selector)
         return elements
+    def  createExcelSheet(self):
+        services=[]
+        elements=self.extractElements()
+        for item in elements:
+          services.append({'titre':item.text})
+        print(services)
+        df=pd.DataFrame(services)
+        file_name = "Sel.xlsx"
+   # Write the DataFrame to the Excel file
+        df.to_excel(file_name, sheet_name='Sel.xlsx',index=False)
    
-
-
+       
